@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 
 import styled from 'styled-components';
 
-const Sprite = styled.img`
-    width: 5em;
-    height: 5em;
-`;
+// const Sprite = styled.img`
+//     width: 5em;
+//     height: 5em;
+// `;
 
 const Card = styled.div`
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -73,7 +73,7 @@ export default class PokemonCard extends Component {
             </div>
         </Card>
         </StyledLink>
-      </div>
-    )
-  }
+        </div>
+        )
+    }
 }
