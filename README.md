@@ -1,65 +1,68 @@
-# Week 5 Assignment
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Getting Started
+## Available Scripts
 
-**Before setting up your repo, note that this assignment has a couple different options. Please read through each option before setting up your app, because it may affect what you name the app.**
+In the project directory, you can run:
 
-1. Fork this repository and clone the code to your machine.
-2. Setup your application with `create-react-app`
-3. Ensure you can run your dev server
+### `npm start`
 
-## Overview
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-For this assignment, you'll be creating an app to view a collection of fictional characters.
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-You may choose from one of the following APIs.
+### `npm test`
 
-* [Star Wars API](https://swapi.co/)
-* [Pokemon API](https://pokeapi.co/)
-* [Rick and Morty API](https://rickandmortyapi.com/)
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Please note that these APIs will rate-limit you. Read the documentation and be aware of the rate-limiting enabled on each API. If you find yourself calling the API too many times, look into downloading an example response and use that while building out your app.
+### `npm run build`
 
-> Up for an adventure? There are other APIs [here](https://github.com/toddmotto/public-apis) that you can choose from _at your own risk_, such as the [Dog API](https://dog.ceo/dog-api/documentation/). Note that if you decide to pick a different API, read up on any rate-limiting for that API. Also **pick an API with no auth and CORS enabled** for best results.
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Requirements
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-For this UI, you'll want an app that has two pages:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-* The home page, for displaying a list of characters from your API
-    * Each character component should contain a link to a character detail page
-    * The name of the character is required. Anything else (character image, short description) is optional
-* A character detail page, for displaying a specific character's information
-    * Should display at least 4-5 facts about the character
-    * Should display the character image if returned from the API. If not returned from the API, it is optional. However, you could find images on Google to map to the character.
+### `npm run eject`
 
-Additional requirements:
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-* Uses React Router to switch between pages (note that each page will likely be a component)
-* Uses route params to pass the character ID to the character detail page
-* Uses `fetch` to retrieve the list of characters and the character details
-* Uses React components that...
-    * Are modular/reusable.
-    * Use the appropriate loops/conditionals to map and display components.
-    * Use propTypes to define props.
-* Styled with CSS to look decent
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Note that these are the only requirements. The APIs may have paging for getting all the characters. You don't need to implement that (although you're free to if you wish).
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-### Inspiration
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-* [Google results for Star Wars characters](https://www.google.com/search?q=list+of+star+wars+characters)
-* [Giant Bomb original 150 Pokemon](https://www.giantbomb.com/profile/wakka/lists/the-150-original-pokemon/59579/)
+## Learn More
 
-## Submission
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-1. In order for a valid submission, your app should run and display a UI when running `npm start`.
-2. Create a pull request to this repository. There will be no CI.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Extras (optional)
+### Code Splitting
 
-* Enable paging for the character list (if supported by the API)
-* Incorporate more pages using other features of your API
-* Add a search box feature to the character home page to filter the character list
-* Add the ability to "favorite" a character and store favorite characters using the browser's `localStorage` API
-* Add component snapshot tests (note that you'll need to use Jest mocks to mock out the `fetch` call).
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
