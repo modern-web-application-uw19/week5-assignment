@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'schwifty';
+  src: url('./assets/get_schwifty__a_rick_and_morty_font_by_jonizaak_dajw4u8-webfont.woff2') format('woff2'),
+       url('./assets/get_schwifty__a_rick_and_morty_font_by_jonizaak_dajw4u8-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+header span a {
+  font-family: 'schwifty';
+  font-size: 32px;
+  color: inherit;
+  text-decoration: none;
+}
