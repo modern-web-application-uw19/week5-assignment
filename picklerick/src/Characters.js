@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Character from './Character';
 import PropTypes from 'prop-types';
-import {CardColumns} from "react-bootstrap";
 
 class Characters extends React.Component{
 
@@ -20,20 +19,15 @@ class Characters extends React.Component{
             />);
         }
 
-
-
         return (
 
 
 
-
-
             <div>
-            <CardColumns>
+
                 <ul>
                     {characters}
                 </ul>
-                </CardColumns>
             </div>
         )
     }

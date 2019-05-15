@@ -67,13 +67,13 @@ class Character extends Component{
                     <Card.Body>
                         <Card.Title>{c.name}</Card.Title>
                         <div>
-                            {/*<Router>*/}
-                                <Link to={"/items/" + c.id}>details</Link>
-                                <Link to="/">back</Link>
-                            {/*    <Switch>*/}
-                            {/*        <Route exact path="/items/:id" component={CharacterDetails} />*/}
-                            {/*    </Switch>*/}
-                            {/*</Router>*/}
+                            <Router>
+                                <Link to={"/items/" + c.id}><FA name="arrow-circle-down" /></Link>
+                                <Link to="/"><FA name="arrow-circle-up" /></Link>
+                                <Switch>
+                                    <Route exact path="/items/:id" component={CharacterDetails} />
+                                </Switch>
+                            </Router>
                         </div>
                     </Card.Body>
 

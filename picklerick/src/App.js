@@ -17,7 +17,6 @@ import {
 
 
 import Logo from './Rick_and_Morty_-_logo_.png';
-import CharacterDetails from "./CharacterDetails";
 const FA = require('react-fontawesome');
 
 
@@ -73,7 +72,6 @@ class App extends  React.Component{
             <div>
                 <nav className="navbar navbar-dark bg-light">
 
-
                     <a className="navbar-brand">Navbar</a>
                     <img src={Logo} height="100"/>
                     <div className="form-inline">
@@ -81,25 +79,16 @@ class App extends  React.Component{
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </div>
                 </nav>
-                <Router>
-                    <Switch>
 
-
-                        <Route exact path="/" component={Characters} isLoading={this.state.isLoading} characters={this.state.data}
-                               onSelect={this.getDetails} />
-                        <Route exact path="/items/:id" component={CharacterDetails} />
-                    {/*    <CardColumns>*/}
-                    {/*    <Characters isLoading={this.state.isLoading} characters={this.state.data}*/}
-                    {/*                onSelect={this.getDetails}/>*/}
-                    {/*</CardColumns>*/}
-                    </Switch>
-                </Router>
+                <CardColumns>
+                    <Characters isLoading={this.state.isLoading} characters={this.state.data}
+                                onSelect={this.getDetails}/>
+                </CardColumns>
             </div>
         );
 
     }
 }
-
 
 
 
