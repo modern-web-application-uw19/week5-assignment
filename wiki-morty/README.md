@@ -1,3 +1,35 @@
+# Wiki Morty
+
+This app will use the Rick & Morty API to create an informational app about the television show "Rick & Morty" 
+
+## Features
+
+### Homepage
+
+The Homepage will feature items from each API endpoint the API supports: 
+
+1. Characters
+2. Locations
+3. Episodes
+
+The three selected will be chosen at random on render of the homepage component. 
+
+### Overview Pages
+
+The overview pages will display results for the endpoint selected (Characters, Locations or Episodes). They will be loaded at a metered output and paginated or lazy loaded on scroll. 
+
+Optional / Nice To Have: 
+
+1. Sort by (Alpha or ID)
+2. List / Grid view
+
+### Detail Pages
+
+These should hit a specific endpoint item (Character, Location or Episode) by ID and show a split pane view with the image on one side (for characters) and a details table on the other. 
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

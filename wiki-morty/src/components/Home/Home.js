@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 
-class Overview extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {  }
   }
   render() { 
     return ( 
-      <div>
-        <h2>Overview {this.props.title}</h2>
-      </div>
+      <div></div>
     );
   }
 }
  
-export default Overview;
+export default Home;

@@ -1,0 +1,25 @@
+Header {
+  background: rgb(73, 73, 73);
+  color: #05B0C8;
+}
+
+Header ul {
+  list-style-type: none;
+}
+
+Header ul li {
+  padding: 0 12px;
+}
+
+Header ul li a {
+  color: #05B0C8;
+  text-decoration: none;
+  font-family: 'schwifty';
+  transition: color .3s ease-in-out;
+}
+
+Header ul li a:hover {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'schwifty';
+}
