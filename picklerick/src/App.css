@@ -44,10 +44,11 @@ ul {
 }
 
 
-
-
 .card-columns {
   column-count: 5;
   column-gap: 2px;
 }
 
+.icons{
+  color: lightseagreen;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Character from './Character';
 import PropTypes from 'prop-types';
+import {CardColumns} from "react-bootstrap";
 
 class Characters extends React.Component{
 
@@ -9,25 +10,20 @@ class Characters extends React.Component{
 
         let characters;
         if (this.props.isLoading){
-            characters=<li>Loading...</li>
+            characters=<p>Loading...</p>
         }
         else{
-            characters = this.props.characters.map( (c,idx) => <Character key={c.id}
+            characters = this.props.characters.map( (c) => <Character key={c.id}
                                                                           id={c.id}
                                                                           character={c}
-                                                                          onClick={this.props.onSelect}
             />);
         }
 
         return (
-
-
-
             <div>
-
-                <ul>
+                <CardColumns>
                     {characters}
-                </ul>
+                </CardColumns>
             </div>
         )
     }
