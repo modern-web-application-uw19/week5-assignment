@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
-
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +14,7 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     const id = this.props.match.params.id;
-    const url = 'https://pokeapi.co/api/v2/pokemon?limit=20/';
+    const url = 'https://pokeapi.co/api/v2/pokemon/';
     fetch(url)
       .then(response => {
         return response.json();
@@ -34,6 +33,10 @@ export default class Home extends React.Component {
       });
   }
 
+  capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
   render() {
     if (this.state.isLoading) {
       return <div>Loading...</div>;
@@ -43,18 +46,24 @@ export default class Home extends React.Component {
       return <div>ERROR, please reload and try again</div>;
     }
 
+    
+
+
     const pokemonSpecies = this.state.data
       .map((pokemon, idx) => {
-        return (  
-            <li key={idx}>
-              <h2>{pokemon.name}</h2>
-              
-            </li>
+        return (
+          <li key={idx}>
+            <Link to={`/pokemon/${idx+1}`}>
+              <h2>{this.capitalize(pokemon.name)}</h2>
+            </Link>
+            {/* <PokemonCard key={idx} name={pokemon.name} url={pokemon.url} /> */}
+          </li>
         )
       });
 
     return (
       <div>
+        <h1>PokeDex</h1>
         <ul>
           {pokemonSpecies}
         </ul>

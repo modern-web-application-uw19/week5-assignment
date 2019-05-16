@@ -31,3 +31,22 @@
     transform: rotate(360deg);
   }
 }
+
+.pokemon-card {
+  text-align: center;
+  border: thick solid #32a1ce;
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+
+.pokemon-card-name {
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+}
+
+.pokemon-card-types {
+  font-size: larger;
+  text-align: center;
+}
