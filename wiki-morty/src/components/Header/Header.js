@@ -9,7 +9,6 @@ class Header extends Component {
   }
   render() { 
     return ( 
-      <Router >
         <header className="py-3">
           <div className="container">
             <div className="d-flex justify-content-between">
@@ -26,7 +25,6 @@ class Header extends Component {
             </div>
           </div>
         </header>
-      </Router>
 
 
      );

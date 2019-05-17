@@ -7,7 +7,9 @@ class Detail extends Component {
   }
   render() { 
     return (
-      <div></div>
+      <div>
+        <h1>this is a detail page</h1>
+      </div>
     );
   }
 }

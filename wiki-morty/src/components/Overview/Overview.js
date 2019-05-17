@@ -8,7 +8,7 @@ class Overview extends Component {
   render() { 
     return ( 
       <div>
-        <h2>Overview {this.props.title}</h2>
+        <h2>{this.props.title}</h2>
       </div>
     );
   }
