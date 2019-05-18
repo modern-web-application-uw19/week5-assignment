@@ -32,6 +32,26 @@
   }
 }
 
+.home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.home-card-list {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.home-card {
+  border: thick solid black;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
 .pokemon-card {
   text-align: center;
   border: thick solid #32a1ce;
@@ -46,7 +66,7 @@
   text-align: center;
 }
 
-.pokemon-card-types {
+.pokemon-card-details {
   font-size: larger;
   text-align: center;
 }
