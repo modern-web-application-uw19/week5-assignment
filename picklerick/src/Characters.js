@@ -29,4 +29,8 @@ class Characters extends React.Component{
     }
 }
 
+Characters.propTypes = {
+    isLoading: PropTypes.bool.isRequired
+};
+
 export default Characters;

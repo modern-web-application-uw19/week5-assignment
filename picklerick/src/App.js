@@ -1,18 +1,8 @@
 import React from 'react';
 import './App.css';
 import Characters from './Characters';
-import { getCharacter } from 'rickmortyapi';
-import { BrowserRouter as Router, Route, Link,Switch} from 'react-router-dom';
-import {
-  CardColumns,
-  Card,
-  CardDeck,
-  CardGroup,
-
-}  from 'react-bootstrap';
-
+import { BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import Logo from './Rick_and_Morty_-_logo_.png';
-import Character from "./Character";
 import CharacterDetails from "./CharacterDetails";
 import ButtonGroup from "react-bootstrap/es/ButtonGroup";
 const FA = require('react-fontawesome');
@@ -58,12 +48,12 @@ class App extends  React.Component{
 
         let url;
         if (e.currentTarget.id === 'next'){
-            if (this.state.info.next != ""){
+            if (this.state.info.next !== ""){
                 url=this.state.info.next;
             }
         }
         else if(e.currentTarget.id === 'prev'){
-            if (this.state.info.prev != ""){
+            if (this.state.info.prev !== ""){
                 url=this.state.info.prev;
             }
         }
@@ -74,7 +64,7 @@ class App extends  React.Component{
             url="https://rickandmortyapi.com/api/character/?page=1";
         }
         else if(e.currentTarget.id ==='btnSearch'){
-            if (searchString.value !=""){
+            if (searchString.value !==""){
                 url=`https://rickandmortyapi.com/api/character/?name=${searchString.value}`;
             }
         }
@@ -84,11 +74,15 @@ class App extends  React.Component{
                 return response.json();
             })
             .then(data => {
-                this.setState({
-                    info: data.info,
-                    data: data.results,
-                    isLoading:false
-                })
+
+                if (data.results.length > 0) {
+
+                    this.setState({
+                        info: data.info,
+                        data: data.results,
+                        isLoading: false
+                    })
+                }
             })
             .catch(error=>
             {
@@ -121,7 +115,7 @@ class App extends  React.Component{
                                 </button>
                             </ButtonGroup>
                         </div>
-                        <img src={Logo} height="100"/>
+                        <img src={Logo} height="100" alt="logo"/>
                         <div className="form-inline">
                             <input className="form-control mr-sm-2" type="search" placeholder="Search by name" id="txtSearchString" aria-label="Search"/>
                             <button className="btn btn-outline-primary my-2 my-sm-0" onClick={this.fetchNextResultSet} id="btnSearch">Search</button>

@@ -46,8 +46,8 @@ ul {
 
 
 .card-columns {
-  column-count: 5;
-  column-gap: 0px;
+  column-count: 10;
+  column-gap: 1px;
 }
 
 .icons{
@@ -62,9 +62,18 @@ ul {
 
   padding: 5px;
   text-align: center;
-  /*display: flex;*/
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: peru;
+}
+
+.head{
+  font-weight: bold;
+  padding-right: 20px;
+}
+.val{
+  font-style: oblique;
+  text-align: left;
 }

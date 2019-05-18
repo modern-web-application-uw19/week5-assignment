@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import {Link} from "react-router-dom";
-import {Card,CardColumns,Button} from "react-bootstrap";
-import Character from "./Character";
 import './App.css';
-
-const FA = require('react-fontawesome');
 
 class CharacterDetails extends Component {
 
@@ -40,8 +35,8 @@ class CharacterDetails extends Component {
             })
 
     }
-
         render() {
+
 
             const c = this.state.data;
 
@@ -51,37 +46,31 @@ class CharacterDetails extends Component {
 
                 return (
                     <div className="detail">
-                        <CardColumns>
-                        <Card style={{width: '500px'}}>
-                            <Card.Img variant="top" src={c.image}/>
-                            <Card.Text>
-                                <div style={{padding: "5px",textAlign: "center"}}>
-                                    <Link to={'/'} className="btn btn-primary">
-                                        <FA name="arrow-left"/>
-                                    </Link>
-                                </div>
-                            </Card.Text>
 
-                        </Card>
-
-                            <div style={{paddingLeft:"200px"}}>
-                                    <h4>{c.name}</h4>
-                                    <table>
-                                        <tr><td>Species:</td><td>{c.species}</td></tr>
-                                        <tr><td>Gender:</td><td>{c.gender}</td></tr>
-                                        <tr><td>Origin:</td><td>{c.origin.name}</td></tr>
-                                        <tr><td>Location:</td><td>{c.location.name}</td></tr>
-                                    </table>
-
+                        <div >
+                            <Link to={'/'}>
+                            <img src={c.image} alt={c.name}/>
+                            <br />
+                            <p>back</p>
+                            </Link>
+                        </div>
+                            <div>
+                                <h4 style={{textAlign:"left"}}>{c.name}</h4>
+                                <table>
+                                    <tbody>
+                                        <tr><td className="head">Species:</td><td className="val">{c.species}</td></tr>
+                                        <tr><td className="head">Gender:</td><td className="val">{c.gender}</td></tr>
+                                        <tr><td className="head">Origin:</td><td className="val">{c.origin.name}</td></tr>
+                                        <tr><td className="head">Location:</td><td className="val">{c.location.name}</td></tr>
+                                    </tbody>
+                                </table>
                             </div>
 
-                        </CardColumns>
                     </div>
                 )
             }
         }
     }
-
 
 export default CharacterDetails;
 
