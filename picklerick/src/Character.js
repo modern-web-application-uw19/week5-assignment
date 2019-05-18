@@ -12,10 +12,12 @@ class Character extends Component{
         return (
 
             <Link to={`/details/${c.id}`}>
-                <Card style={{width:'16em'}} >
+                <Card style={{width:'16em',backgroundColor:"lightgray"}} >
 
                     <Card.Body>
-                        <Card.Subtitle>{c.name}</Card.Subtitle>
+                        <div style={{height:"80px"}}>
+                            <Card.Subtitle>{c.name}</Card.Subtitle>
+                        </div>
                         <Card.Img variant="bottom"  src={c.image}/>
                     </Card.Body>
                 </Card>

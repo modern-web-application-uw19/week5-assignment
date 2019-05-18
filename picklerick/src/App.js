@@ -4,6 +4,7 @@ import Characters from './Characters';
 import { BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import Logo from './Rick_and_Morty_-_logo_.png';
 import CharacterDetails from "./CharacterDetails";
+import EpisodeDetails from './EpisodeDetails';
 import ButtonGroup from "react-bootstrap/es/ButtonGroup";
 const FA = require('react-fontawesome');
 
@@ -19,7 +20,8 @@ class App extends  React.Component{
             info: {},
             data: {},
             isLoading: true,
-            hasError: false
+            hasError: false,
+            total:0
         }
     }
     componentDidMount(){
@@ -93,6 +95,45 @@ class App extends  React.Component{
             })
     }
 
+    fetchRandomResult= (e) => {
+
+        const info = {
+                "count": this.state.info.count,
+                "pages": 1,
+                "next": "https://rickandmortyapi.com/api/character/?page=1",
+                "prev": "https://rickandmortyapi.com/api/character/?page=1"
+        };
+
+        let ids=[];
+        for(let i=0;i<7;i++){
+            ids.push(Math.floor(Math.random() * this.state.info.count) + 1 );
+        }
+
+        let url = `https://rickandmortyapi.com/api/character/${ids.join(',')}`;
+        fetch(url)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+
+                if (data.length > 0) {
+
+                    this.setState({
+                        info: info,
+                        data: data,
+                        isLoading: false
+                    })
+                }
+            })
+            .catch(error=>
+            {
+                this.setState({
+                    hasError:true,
+                    isLoading:false
+                });
+            })
+    }
+
 
     render() {
         return (
@@ -106,6 +147,9 @@ class App extends  React.Component{
                                 </button>
                                 <button  id="prev" onClick={this.fetchNextResultSet} className="btn btn-outline-primary my-2 my-sm-0 navbutton">
                                     <FA name="arrow-left"/>
+                                </button>
+                                <button  id="rand" onClick={this.fetchRandomResult} className="btn btn-outline-primary my-2 my-sm-0 navbutton">
+                                    <FA name="random"/>
                                 </button>
                                 <button  id="next" onClick={this.fetchNextResultSet} className="btn btn-outline-primary my-2 my-sm-0 navbutton">
                                     <FA name="arrow-right"/>
@@ -132,6 +176,10 @@ class App extends  React.Component{
                         <Route exact
                                path="/details/:id"
                                render={(props) => <CharacterDetails {...props} />}
+                        />
+                        <Route exact
+                               path="/episode/:id"
+                               render={(props) => <EpisodeDetails {...props}  />}
                         />
                     </Switch>
                 </Router>
