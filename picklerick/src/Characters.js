@@ -20,7 +20,7 @@ class Characters extends React.Component{
         }
 
         return (
-            <div>
+            <div style={{backgroundColor:"#282c34"}}>
                 <CardColumns>
                     {characters}
                 </CardColumns>

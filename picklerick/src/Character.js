@@ -17,9 +17,10 @@ class Character extends Component{
 
             <Link to={`/details/${c.id}`}>
                 <Card style={{width:'18em'}} >
-                    <Card.Img variant="top"  src={c.image}/>
+
                     <Card.Body>
                         <Card.Title>{c.name}</Card.Title>
+                        <Card.Img variant="bottom"  src={c.image}/>
                     </Card.Body>
                 </Card>
             </Link>
