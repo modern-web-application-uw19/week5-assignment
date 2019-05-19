@@ -86,13 +86,14 @@ export default class PokemonCard extends React.Component {
 
         return (
             <div>
-                <Link to={"/"}>Home</Link>
+                <div className="home-link"><Link to={"/"}>Home</Link></div>
                 <div className='pokemon-card'>
                     <div className="pokemon-card-name">#{pokemonDetails.id} {pokemonName}</div>
                     <img src={pokemonDetails.sprites.front_default} alt="Default" />
                     <div className="pokemon-card-details"><b>Type:</b> {pokemonTypes}</div>
-                    <br />
                     <div className="pokemon-card-details"><b>Abilities:</b> {pokemonAbilities}</div>
+                    <div className="pokemon-card-details"><b>Height:</b> {pokemonDetails.height / 10} m</div>
+                    <div className="pokemon-card-details"><b>Weight:</b> {pokemonDetails.weight / 10} kg</div>
                 </div>
             </div>
         );

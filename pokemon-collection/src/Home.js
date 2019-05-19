@@ -56,7 +56,7 @@ export default class Home extends React.Component {
                     <div className="home-card" key={idx+1}>
                         <Link to={`/pokemon/${idx + 1}`}>
                             {/* <h2>{this.capitalize(pokemon.name)}</h2> */}
-                            <Pokemon key={idx+1} idx={idx+1} pokemon={pokemon} />
+                            <Pokemon key={idx+1} idx={idx+1} pokemon={pokemon} url={pokemon.url} />
                         </Link>
                         
                     </div>

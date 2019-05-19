@@ -7,8 +7,30 @@ export default class Pokemon extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {}
+            data: {},
+            isLoading: true,
+            hasError: false
         }
+    }
+
+    componentDidMount() {
+        const url = this.props.url;
+        fetch(url)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                this.setState({
+                    data: data,
+                    isLoading: false
+                });
+            })
+            .catch(error => {
+                this.setState({
+                    hasError: true,
+                    isLoading: false
+                });
+            });
     }
 
     capitalize(string) {
@@ -16,15 +38,21 @@ export default class Pokemon extends React.Component {
     }
 
     render() {
-        const pokemonDetails = this.props.pokemon;
+        if (this.state.isLoading) {
+            return <div>Loading...</div>;
+        }
+
+        if (this.state.hasError) {
+            return <div>ERROR, please reload and try again</div>;
+        }
+
+        const pokemonDataDetails = this.state.data;
 
         return (
             <div>
                 <div className="home-card-list">
-                    <h2>{this.capitalize(pokemonDetails.name)}</h2>
-                    {/* this.props.key = {this.props.idx} */}
-                    {/* this.props.pokemon = {this.props.pokemon.order} */}
-                    {/* <img src={this.props} alt="Default" /> */}
+                    <h2>{this.capitalize(pokemonDataDetails.name)}</h2>
+                    <img src={pokemonDataDetails.sprites.front_default} alt="Default" />
                 </div>
             </div>
         );
