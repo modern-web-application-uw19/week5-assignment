@@ -36,12 +36,26 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.home-title {
+  
 }
 
 .home-card-list {
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
+  padding: 20px;
 }
 
 .home-card {
@@ -50,6 +64,23 @@
   height: 200px;
   margin: 5px;
   flex-wrap: wrap;
+  align-content: center;
+}
+
+.home-card-list div.home-card:hover {
+  background-color: #32a1ce;
+}
+
+.home-pokemon-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-pokemon-name {
+  font-size: 20px;
+  text-align: center;
+  vertical-align: bottom;
 }
 
 .pokemon-card {

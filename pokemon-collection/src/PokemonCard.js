@@ -7,7 +7,6 @@ export default class PokemonCard extends React.Component {
         super(props);
         this.state = {
             data: {},
-            // speciesData: {},
             isLoading: true,
             hasError: false
         }
@@ -32,24 +31,6 @@ export default class PokemonCard extends React.Component {
                     isLoading: false
                 });
             });
-
-        // const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${id}`;
-        // fetch(pokemonSpeciesUrl)
-        // .then(speciesResponse => {
-        //     return speciesResponse.json();
-        // })
-        // .then(speciesData => {
-        //     this.setState({
-        //         data: speciesData.flavor_text_entries,
-        //         isLoading: false
-        //     });
-        // })
-        // .catch(error => {
-        //     this.setState({
-        //         hasError: true,
-        //         isLoading: false
-        //     });
-        // });
     }
 
     capitalize(string) {
@@ -66,8 +47,6 @@ export default class PokemonCard extends React.Component {
         }
 
         const pokemonDetails = this.state.data;
-        //const pokemonSpeciesDetails = this.state.speciesData;
-
         const pokemonName = this.capitalize(pokemonDetails.name);
 
         const pokemonTypes = pokemonDetails.types

@@ -15,8 +15,7 @@ export default class Home extends React.Component {
     }
 
     componentDidMount() {
-        // const id = this.props.match.params.id;
-        const pokemonUrl = 'https://pokeapi.co/api/v2/pokemon/';
+        const pokemonUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=964';
         fetch(pokemonUrl)
             .then(response => {
                 return response.json();
@@ -55,17 +54,15 @@ export default class Home extends React.Component {
                 return (
                     <div className="home-card" key={idx+1}>
                         <Link to={`/pokemon/${idx + 1}`}>
-                            {/* <h2>{this.capitalize(pokemon.name)}</h2> */}
-                            <Pokemon key={idx+1} idx={idx+1} pokemon={pokemon} url={pokemon.url} />
+                            <Pokemon key={idx+1} idx={idx+1} url={pokemon.url} />
                         </Link>
-                        
                     </div>
                 )
             });
 
         return (
             <div className="home">
-                <h1>PokeDex</h1>
+                <h1 className="home-title">PokeDex</h1>
                 <div className="home-card-list">
                     {pokemonSpecies}
                 </div>

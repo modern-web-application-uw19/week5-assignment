@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default class Pokemon extends React.Component {
@@ -50,15 +49,13 @@ export default class Pokemon extends React.Component {
 
         return (
             <div>
-                <div className="home-card-list">
-                    <h2>{this.capitalize(pokemonDataDetails.name)}</h2>
-                    <img src={pokemonDataDetails.sprites.front_default} alt="Default" />
-                </div>
+                <img className="home-pokemon-image" src={pokemonDataDetails.sprites.front_default} alt="Default" />
+                <div className="home-pokemon-name">{this.capitalize(pokemonDataDetails.name)}</div>
             </div>
         );
     }
 }
 Pokemon.propTypes = {
-    pokemon: PropTypes.object.isRequired,
+    url: PropTypes.string.isRequired,
     idx: PropTypes.number.isRequired
 }
