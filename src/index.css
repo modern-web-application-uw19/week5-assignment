@@ -5,9 +5,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("./thD9RSEEZV.jpg") ;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  color: white;
+  height: 500px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.appClass {
+padding-left: 2em;
+}
+
+.linkClass:visited {
+  color: white;
+}
+.linkClass{
+  color: white;
+}
+.navLinkClass {
+  color: purple;
+}
+.navLinkClass:visited {
+  color: purple;
 }
