@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Pokemon from './Pokemon';
 
 export default class Home extends React.Component {
@@ -69,7 +68,4 @@ export default class Home extends React.Component {
             </div>
         );
     }
-}
-Home.propTypes = {
-    pokemonSpecies: PropTypes.object.isRequired
 }
