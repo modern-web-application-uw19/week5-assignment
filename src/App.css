@@ -1,4 +1,10 @@
 * { margin:0; }
-ul { height:50px; line-height:50px; background-color:hsl(271, 76%, 53%); padding:0; }
-li { display:inline-block; list-style-type: none; padding:0 20px; border-right:1px solid hsl(271, 76%, 28%); }
-li a { color:white; font-weight: bold; text-decoration: none; }
+ul.nav { height:50px; line-height:50px; background-color:hsl(271, 76%, 53%); padding:0; }
+ul.nav li { display:inline-block; list-style-type: none; padding:0 20px; border-right:1px solid hsl(271, 76%, 28%); }
+ul.nav li a { color:white; font-weight: bold; text-decoration: none; }
+
+ul.pokéList { height:calc(100% - 100px); }
+ul.pokéList li { list-style-type: none; }
+
+.bottomNav { position: absolute; bottom:0; padding:auto; text-align:center; height:50px; width:100%; }
+.bottomNav button { margin: auto; }
