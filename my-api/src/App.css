@@ -39,3 +39,9 @@
   margin-right: 5px;
   border-radius: 50%;
 }
+.MyImage {
+  float: left;
+  width: 273px;
+  height: 180px;
+  margin-right: 5px;
+}

@@ -7,7 +7,6 @@ class App extends React.Component {
     return (
       <div>
         <MyList />
-        {/* <div>{this.state.data.results}</div> */}
       </div>
     );
   }
