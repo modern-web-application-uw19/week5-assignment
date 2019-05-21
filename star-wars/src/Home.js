@@ -6,7 +6,10 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                {characters.map((character, i) => <Character key={i} {...character}/>)}
+                <div className="b">Star Wars Characters</div>
+                <div>
+                    {characters.map((character, i) => <Character key={i} {...character} />)}
+                </div>
             </div>
         );
     }

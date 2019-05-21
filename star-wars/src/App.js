@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './Home';
-import Character from './Character';
+import CharacterDetails from './CharacterDetails';
 
 // function Home(props) {
 //   console.log(props);
@@ -37,7 +37,7 @@ function App() {
 
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/character/:id" component={Character} />
+          <Route path="/character/:id" component={CharacterDetails} />
           <Route component={NotFound} />
         </Switch>
       </Router>

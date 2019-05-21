@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -21,6 +21,60 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card
+{
+  width: 350px;
+  padding: 10px;
+	border: solid 1px #808080;
+	background-color: white;
+	display: inline-block;
+	color:black;
+	margin: 3px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+
+.b {
+  font-weight: bold;
+  text-align: center;
+}
+
+.article{
+  width: 66%;
+  height: 320px;
+  padding: 10px;
+	border: solid 1px #808080;
+	background-color: white;
+	display: inline-block;
+	border-radius: 10px;
+	color:black;
+	margin: 3px;
+}
+
+.author-image {
+  border-radius: 50%;
+  width: 50px;
+  display: block;
+  padding-right:3px;
+  padding-top: 3px;
+}
+
+.article-image {
+  width: 65%;
 }
 
 @keyframes App-logo-spin {

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 class Character extends React.Component {
     static propTypes = {
         name:  PropTypes.string,
-        height: PropTypes.number,
-        mass: PropTypes.number,
+        height: PropTypes.string,
+        mass: PropTypes.string,
         hair_color: PropTypes.string,
         skin_color: PropTypes.string,
         eye_color: PropTypes.string,
@@ -30,11 +30,9 @@ class Character extends React.Component {
         console.log(myUrl);
         return (
             <a href = {myUrl}>
-                <div>
-                    <div>{this.props.name}</div>
-                    <div>{this.props.url}</div>
-                    <hr></hr>
-                </div>
+                <ul>
+                    <li>{this.props.name}</li>
+                </ul>
             </a>
         );
     }
