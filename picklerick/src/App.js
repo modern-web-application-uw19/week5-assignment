@@ -6,8 +6,35 @@ import Logo from './Rick_and_Morty_-_logo_.png';
 import CharacterDetails from "./CharacterDetails";
 import EpisodeDetails from './EpisodeDetails';
 import ButtonGroup from "react-bootstrap/es/ButtonGroup";
+import {  Link} from 'react-router-dom';
 const FA = require('react-fontawesome');
 
+
+/**
+ * Respond to clear event in the search box
+ */
+class SearchBox extends React.Component {
+    constructor(props) {
+        super(props);
+        this.input = React.createRef();
+    }
+
+    componentDidMount() {
+        this.input.current.addEventListener('search', this.onSearch);
+    }
+
+    onSearch = () => {
+        window.location.href = "/";
+    }
+
+    render() {
+        return (
+            <div>
+                <input className="form-control mr-sm-2" type="search" placeholder="Search by name" id="txtSearchString" aria-label="Search" ref={this.input} />
+            </div>
+        )
+    }
+}
 
 
 class App extends  React.Component{
@@ -142,26 +169,28 @@ class App extends  React.Component{
                     <nav className="navbar navbar-dark" style={{backgroundColor:"#282c34",paddingBottom:'20px'}}>
                         <div className="App-header">
                             <ButtonGroup>
-                                <button  id="first" onClick={this.fetchNextResultSet} className="btn btn-outline-primary my-2 my-sm-0 navbutton">
+                                <button  id="first" onClick={this.fetchNextResultSet} title="First Page" className="btn btn-outline-primary my-2 my-sm-0 navbutton">
                                     <FA name="arrow-circle-left"/>
                                 </button>
-                                <button  id="prev" onClick={this.fetchNextResultSet} className="btn btn-outline-primary my-2 my-sm-0 navbutton">
+                                <button  id="prev" onClick={this.fetchNextResultSet} title="Previous Page" className="btn btn-outline-primary my-2 my-sm-0 navbutton">
                                     <FA name="arrow-left"/>
                                 </button>
-                                <button  id="rand" onClick={this.fetchRandomResult} className="btn btn-outline-primary my-2 my-sm-0 navbutton">
+                                <button  id="rand" onClick={this.fetchRandomResult} title="Random characters" className="btn btn-outline-primary my-2 my-sm-0 navbutton">
                                     <FA name="random"/>
                                 </button>
-                                <button  id="next" onClick={this.fetchNextResultSet} className="btn btn-outline-primary my-2 my-sm-0 navbutton">
+                                <button  id="next" onClick={this.fetchNextResultSet} title="Next Page" className="btn btn-outline-primary my-2 my-sm-0 navbutton">
                                     <FA name="arrow-right"/>
                                 </button>
-                                <button  id="last" onClick={this.fetchNextResultSet} className="btn btn-outline-primary my-2 my-sm-0 navbutton">
+                                <button  id="last" onClick={this.fetchNextResultSet} title="Last Page" className="btn btn-outline-primary my-2 my-sm-0 navbutton">
                                     <FA name="arrow-circle-right"/>
                                 </button>
                             </ButtonGroup>
                         </div>
-                        <img src={Logo} height="100" alt="logo"/>
+                        <Link to="/">
+                            <img title="Back" src={Logo} height="100" alt="logo"/>
+                        </Link>
                         <div className="form-inline">
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search by name" id="txtSearchString" aria-label="Search"/>
+                            <SearchBox />
                             <button className="btn btn-outline-primary my-2 my-sm-0" onClick={this.fetchNextResultSet} id="btnSearch">Search</button>
                         </div>
                     </nav>
@@ -178,7 +207,7 @@ class App extends  React.Component{
                                render={(props) => <CharacterDetails {...props} />}
                         />
                         <Route exact
-                               path="/episode/:id"
+                               path="/episode/:characterId/:id"
                                render={(props) => <EpisodeDetails {...props}  />}
                         />
                     </Switch>

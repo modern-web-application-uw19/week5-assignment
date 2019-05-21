@@ -46,12 +46,12 @@ class CharacterDetails extends Component {
                 return <p>Loading...</p>
             } else {
 
-                let episodes = this.state.data.episode.map( (c) => <ListGroup.Item><Link id={c.id} to={`/episode/${c.split('/').slice(-1).pop()}`}>
-                    Episode {c.split('/').slice(-1).pop()}</Link></ListGroup.Item>);
+                let episodes = this.state.data.episode.map( (episode) => <li><Link id={episode.id} to={`/episode/${c.id}/${episode.split('/').slice(-1).pop()}`}>
+                    Episode {episode.split('/').slice(-1).pop()}</Link></li>);
 
                 return (
                     <div>
-                        <CardColumns >
+
                         <Card style={{width:'19rem',marginLeft:'20%'}}>
                             <Link to={'/'}  style={{textAlign:"center"}}>
                                 <img src={c.image} alt={c.name}/>
@@ -71,14 +71,15 @@ class CharacterDetails extends Component {
                             </table>
                         </Card.Body>
                         </Card>
-                        <div style={{width:'25rem',marginLeft:'40%'}}>
-                            <Card.Title>Episodes</Card.Title>
-                            <ListGroup>
-                                {episodes}
-                            </ListGroup>
-                        </div>
 
-                    </CardColumns>
+
+                            <div style={{marginTop:"10px"}}>
+                                <ul>
+                                    {episodes}
+                                </ul>
+                            </div>
+
+
                     </div>
                 )
             }
