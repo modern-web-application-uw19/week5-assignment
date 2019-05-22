@@ -30,7 +30,7 @@ export default class PokemonDetail extends React.Component {
         </ul>
       )
     } else {
-      return "wait for it..."
+      return "just one sec..."
     }
   }
 
