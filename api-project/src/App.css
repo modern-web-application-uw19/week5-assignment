@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
+  
+  body {
+    background-image: url(rick-and-morty-space.jpg); 
+  }
+
+  .list-title {
+    font-family: Get Schwifty;
+    font-size: 116px;
+    color: rgb(78, 177, 201);
+    text-shadow: 2px 2px #bbd968;
+    text-align: center;
+  }
+
+  .character-list {
+    list-style-type: none;
+  }
+
+  .list-item {
+    font-size: 24px;
+    color: #bbd968;
+    font-family: Titan One;
+    font-size: 32px; 
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+
+  .list-image {
+    width: 25%;
+    height: 25%;
+    padding-top: 8px;
+  }
+
+  .list-item-container {
+    padding-bottom: 32px;
+  }
+
+  .character-page-name {
+    font-family: Get Schwifty;
+    font-size: 116px;
+    color: rgb(78, 177, 201);
+    text-shadow: 2px 2px #bbd968;
+    text-align: center;
+  }
+
+  .character-page-img {
+    padding-left: 20%;
+  }
+
+  .character-details {
+    list-style-type: none;
+    padding-left: 20%;
+    font-family: Titan One;
+    font-size: 24px;  
+    color: #bbd968;
+    display: inline-block;
+  }
+
+  .details-list-item {
+    padding: 8px;
+    display: block;
+    }
+
+
