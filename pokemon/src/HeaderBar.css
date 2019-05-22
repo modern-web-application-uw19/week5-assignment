@@ -1,0 +1,103 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+  }
+  
+  li {
+    float: left;
+  }
+  h1.title{
+    margin-bottom: 0;
+      margin-top:0;
+      padding-left: 5px;
+      background-image: linear-gradient(to right,darkblue,white);
+      color:white;
+  }
+  li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #ddd;
+  }
+  
+  li a.active {
+    color: white;
+    background-color: #4CAF50;
+  }
+
+  .pokemonDesc{
+    width:100px;
+    min-width: 100px;
+    height: 40px;
+    min-height: 40px;
+    float: left;
+    /*border: rgb(186, 212, 247) solid thin;*/
+    margin: 5px;
+    padding:10px;
+    text-align: center;
+    
+    /*color:white;*/
+    
+    font-family: sans-serif;
+
+    /*background: rgb(47, 48, 102);*/
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #fff inset,
+              -1px -1px 2px #fff inset;
+    border-radius: 3px/6px;         
+  }
+  .pokemonDesc:hover{
+    color:lightblue;
+    cursor: pointer;
+  }
+  div.fireNameType{
+    background-image: linear-gradient(to right, rgb(95, 16, 16) ,rgb(250, 142, 142));
+  }
+  div.electricNameType{
+    background-image: linear-gradient(to right,rgb(248, 245, 76), rgb(241, 241, 193));
+  }
+  div.waterNameType{
+    background-image: linear-gradient(to right, darkblue , lightblue);
+  }
+  div.nameType{
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+    color:white;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+  }
+
+  .desc{
+    width:50%;
+    min-width: 100px;
+    
+    
+    /*border: rgb(186, 212, 247) solid thin;*/
+    margin: auto;
+    padding:10px;
+    text-align: center;
+    
+    /*color:white;*/
+    
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    /*background: rgb(47, 48, 102);*/
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #fff inset,
+              -1px -1px 2px #fff inset;
+    border-radius: 3px/6px;         
+  }
