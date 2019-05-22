@@ -51,6 +51,7 @@ class ElectricPokemon extends React.Component{
         this.setState({
             indPokemonId: id
         })
+        this.props.history.push(`/electric/${id}`);
         this.fetchIndPokemon(id);
     };
     

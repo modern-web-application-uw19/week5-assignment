@@ -52,6 +52,7 @@ class FirePokemon extends React.Component{
         this.setState({
             indPokemonId: id
         })
+        this.props.history.push(`/fire/${id}`);
         this.fetchIndPokemon(id);
     };
 

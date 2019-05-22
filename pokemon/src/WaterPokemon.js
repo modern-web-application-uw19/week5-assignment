@@ -45,6 +45,7 @@ class WaterPokemon extends React.Component{
         this.setState({
             indPokemonId: id
         })
+        this.props.history.push(`/water/${id}`);
         this.fetchIndPokemon(id);
     };
     

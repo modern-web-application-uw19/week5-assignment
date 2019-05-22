@@ -31,11 +31,12 @@ class Description extends React.Component{
                             <li><img src={this.props.character.sprites.front_shiny} alt='shiny front'/></li>
                             <li><img src={this.props.character.sprites.back_shiny} alt='shiny back'/></li>
                             <li style={{textAlign:'center',marginTop:'40px',marginLeft:'15px'}}><span style={{fontWeight:'bold'}}>id:</span>  {this.props.character.id}</li>
-                            <li style={{textAlign:'center',marginTop:'40px',marginLeft:'15px'}}><span style={{fontWeight:'bold'}}>Abilities</span>{this.props.character.abilities.map((ability, index)=>{
-                                return(
-                                    <p style={{textAlign:'center', marginTop:'0', marginBottom:'0',padding:'0'}} key={index}>{ability.ability.name}</p>
-                                );
-                            })}
+                            <li style={{textAlign:'center',marginTop:'40px',marginLeft:'15px'}}><span style={{fontWeight:'bold'}}>Abilities</span>
+                                {this.props.character.abilities.map((ability, index)=>{
+                                    return(
+                                        <p style={{textAlign:'center', marginTop:'0', marginBottom:'0',padding:'0'}} key={index}>{ability.ability.name}</p>
+                                    );
+                                })}
                             </li>
                         </ul>
                     </div>
