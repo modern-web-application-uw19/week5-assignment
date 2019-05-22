@@ -1,11 +1,24 @@
-.pokemon_cell_img {
+.pokeCellImg {
   width: 120px;
   height: 120px;
   margin: 10px;
   align-content: center;
-  background-color: #FFF;
+  background-color: rgb(238, 243, 252);
   background-repeat: no-repeat;
   border: none;
   border-radius: 5px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+  position: relative;
+  
+}
+
+.pokeCell {
+  display: inline-block;
+}
+
+.buttonText {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  left: 0%;
 }

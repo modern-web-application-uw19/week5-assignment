@@ -31,3 +31,35 @@
     transform: rotate(360deg);
   }
 }
+
+.pokeList {
+  display: block;
+}
+
+.header {
+  vertical-align: middle;
+}
+
+.headerTitle {
+  font-size: 50px;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-color: rgb(29, 10, 202);
+  -webkit-text-stroke-width: 2.00px;
+  display: inline;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.headerButton {
+  width: 120px;
+  height: 60px;
+  margin: 10px;
+  margin-left: 30px;
+  align-content: center;
+  background-color: whitesmoke;
+  border: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+  position: relative;
+  vertical-align: middle;
+}

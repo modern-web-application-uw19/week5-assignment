@@ -9,14 +9,13 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: {},
-      pokemonDtl: {},
       isLoading: true,
       hasError: false
     }
   }
 
   componentDidMount() {
-    fetch('https://pokeapi.co/api/v2/pokemon/?limit=3')
+    fetch('https://pokeapi.co/api/v2/pokemon/?limit=150')
       .then(response => {
         return response.json();
       })
@@ -46,37 +45,38 @@ class App extends React.Component {
     function NotFound() {
       return <h1>404</h1>
     }
-
-    function handleOnClick(id) {
-      console.log(id)
-      fetch(`http://pokeapi.co/api/v2/pokemon/${id}/`)
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          const pokemonDtl = new PokemonDetail(data);
-          this.setState({pokemonDtl});
-        })
-        .catch(err => console.log(err));
-    }
     
     const PokemonCells = this.state.data.map((pokemon, idx) => {
       return (
-        <PokemonCell pokemon={pokemon} key={idx} idx={idx} handleOnClick={handleOnClick.bind(this)}/>);
+        <PokemonCell pokemon={pokemon} key={idx} idx={idx}/>);
       });
 
-    function PokemonList(props) {
-      return PokemonCells;
+    function PokemonList() {
+      return (
+        <div>{PokemonCells}</div>
+      )
     }
     
+    function DetailView({ match }) {
+      let url = 'https://pokeapi.co/api/v2/pokemon/' + match.params.name;
+      return <PokemonDetail match={match} name={match.params.name} url={url}/>;
+    }
+
     return (
       <div>
         <Router>
-        <Link to="/">Home</Link>
-        <Switch>
-          <Route exact path="/" component={PokemonList} />
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
+          <div className="header">
+            <h1 className="headerTitle">Gotta Catch 'Em All!</h1>
+            <button className="headerButton">
+              <Link to="/">All Pokemon</Link>
+            </button>
+          </div>
+          <Switch>
+            <Route exact path="/" component={PokemonList} />
+            <Route path="/:name" component={DetailView} />
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
       </div>
     );
   }
