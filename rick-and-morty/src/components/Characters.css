@@ -1,0 +1,33 @@
+.character-display {
+  padding: 10px;
+  display: grid;
+  grid-gap: 10px;
+  grid-auto-rows: repeat(6, 1fr);
+  border: 1px solid #DCDCDC;
+}
+
+
+span.character-name {
+  grid-row: 1;
+  font-size: 15px;
+}
+
+img.character-img {
+  grid-row: 2
+}
+
+img.character-species {
+  grid-row: 3
+}
+
+img.character-status {
+  grid-row: 4
+}
+
+img.character-gender {
+  grid-row: 5
+}
+
+img.character-origin {
+  grid-row: 6
+}

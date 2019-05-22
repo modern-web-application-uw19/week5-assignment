@@ -1,0 +1,7 @@
+div.character-list {
+  padding: 10px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: auto;
+  border: 1px solid #DCDCDC;
+}

@@ -1,0 +1,25 @@
+.app-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: repeat(3, 1fr);
+  border: 1px solid #DCDCDC;
+}
+
+div.header {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+div.navigation {
+  font-size: 15px;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+
+div.character-container {
+  grid-column: 2;
+  grid-row: 2;
+}
