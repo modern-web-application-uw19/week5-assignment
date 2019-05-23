@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.character-list-item {
+  border: 1px solid lightblue;
+  flex: 0 0 100px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.character-list-item:hover {
+  background-color: lightblue;
+}
+
+/* .character-list-item-name {
+
+} */
+
+.character-list-item-gender {
+  font-size: 0.7em;
+  color: gray;
+}
+
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
