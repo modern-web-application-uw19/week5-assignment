@@ -6,7 +6,7 @@ import CharacterList from './characters';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 function Home(){
-return <div><CharacterList onDetail={this.charDetailLink}/></div>
+return <div><CharacterList /></div>
 }
 
 function Char(){

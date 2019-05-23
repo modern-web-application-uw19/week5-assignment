@@ -1,4 +1,5 @@
 import React from 'react'
+import Url from './characters.js'
 
 class Character extends React.Component{
     constructor(props){
@@ -6,12 +7,13 @@ class Character extends React.Component{
 
         this.state = {
           character: [],
-          isLoading: true
+          isLoading: true,
+          fetchUrl: Url
         }
-      }
+    }
    
       componentDidMount(){
-        fetch('https://swapi.co/api/people/1/') 
+        fetch(this.props.fetchUrl) 
           .then(response => response.json())
           .then(data => {
             this.setState({

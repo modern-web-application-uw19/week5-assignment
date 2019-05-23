@@ -2,16 +2,9 @@ import React from 'react';
 import Data from './characters.json';
 
 class CharacterList extends React.Component{
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //         Data,
-    //     }
-    //     console.log(Data)
-    // }
-
+ 
     charDetailLink = (idx) => {
-      const Url =  Object.values(Data);  
+      const Url =  Data[idx].link;  
       console.log(Url)
       
     } 
@@ -24,7 +17,7 @@ class CharacterList extends React.Component{
                 {Data.map((charDetail, idx)=>{
                     return <div key={idx} className="charDetail">
                              <li>{charDetail.name}</li>
-                             <ul><li><button onClick={() => this.charDetailLink()}>Character Details</button></li></ul>
+                             <ul><li><button onClick={() => this.charDetailLink(idx)}>Activate Character Details</button></li></ul>
                            </div>
                 })}
             </div>
