@@ -55,16 +55,15 @@ export default class Details extends Component {
 
         let typesList = this.state.types.map((type,idx) => {
             switch(type.type.name) {
-                case "bug": return ( <span key={"t"+idx} title="Bug type">🐛</span> );
-                case "fire": return ( <span key={"t"+idx} title="Fire type">🔥</span> );
-                case "flying": return ( <span key={"t"+idx} title="Bird type">🐦</span> );
-                case "grass": return ( <span key={"t"+idx} title="Grass type">🌱</span> );
-                case "normal": return ( <span key={"t"+idx} title="Normal type">⚪</span> );
-                case "poison": return ( <span key={"t"+idx} title="Poison type">☠️</span> );
-                case "water": return ( <span key={"t"+idx} title="Water type">🌊</span> );
+                case "bug": return ( <span key={"t"+idx} role="img" aria-label="Bug type">🐛</span> );
+                case "fire": return ( <span key={"t"+idx} role="img" aria-label="Fire type">🔥</span> );
+                case "flying": return ( <span key={"t"+idx} role="img" aria-label="Bird type">🐦</span> );
+                case "grass": return ( <span key={"t"+idx} role="img" aria-label="Grass type">🌱</span> );
+                case "normal": return ( <span key={"t"+idx} role="img" aria-label="Normal type">⚪</span> );
+                case "poison": return ( <span key={"t"+idx} role="img" aria-label="Poison type">☠️</span> );
+                case "water": return ( <span key={"t"+idx} role="img" aria-label="Water type">🌊</span> );
+                default: return ( <span key={"t"+idx}>{type.type.name}</span> );
             }
-
-            return ( <span key={"t"+idx}>{type.type.name}</span> )
         });
 
         return (
