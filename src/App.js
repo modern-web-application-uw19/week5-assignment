@@ -9,11 +9,10 @@ function App() {
     <div className="App">
       <Router>
         <ul className="nav">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/details">Details</Link></li>
+          <li><Link to="/">Return to List</Link></li>
         </ul>
         <Route exact path="/" component={Home}></Route>
-        <Route path="/details" component={Details}></Route>
+        <Route path="/details/:name" render={ (props) => <Details name={props.match.params.name} /> }></Route>
       </Router>
     </div>
   );

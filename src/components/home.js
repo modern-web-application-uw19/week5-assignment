@@ -26,7 +26,7 @@ export default class Home extends Component {
                 console.log(this.state.results);
 
         let resultsList = this.state.results.map((pokemon) => {
-            return ( <li><a href={pokemon.url}>{pokemon.name}</a></li> )
+            return ( <li><a href={"details/"+pokemon.name}>{pokemon.name}</a></li> )
         });
 
         return (
@@ -34,10 +34,6 @@ export default class Home extends Component {
                 <ul className="pokéList">
                     {resultsList}
                 </ul>
-                <div className="bottomNav">
-                    <button dataurl={this.state.previous}>Prev</button> {/* only outputs the dataurl attrib if this.state.previous exists */}
-                    <button dataurl={this.state.next}>Next</button>
-                </div>
             </div>
         );
     }
