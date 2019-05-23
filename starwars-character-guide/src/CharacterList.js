@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 
 import CharacterListItem from './CharacterListItem';
-import data from './characterlist.json';
 
 export default class CharacterList extends React.Component {
     constructor(props) {
@@ -32,23 +30,19 @@ export default class CharacterList extends React.Component {
     }
 
     componentDidMount() {
-        // fetch('https://swapi.co/api/people')
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         this.setState({
-        //             data: data,
-        //             isLoading: false
-        //         });
-        //     })
-        //     .catch(error => {
-        //         this.setState({
-        //             hasError: true,
-        //             isLoading: false
-        //         });
-        //     });
-        this.setState({
-            data: data,
-            isLoading: false
-        });
+        fetch('https://swapi.co/api/people')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    data: data,
+                    isLoading: false
+                });
+            })
+            .catch(error => {
+                this.setState({
+                    hasError: true,
+                    isLoading: false
+                });
+            });
     }
 }
