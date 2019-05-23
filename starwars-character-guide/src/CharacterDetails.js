@@ -20,8 +20,11 @@ export default class CharacterDetails extends React.Component {
         }
 
         const character = this.state.data;
+        const charId = this.props.match.params.id;
+        const imageUrl = `https://starwars-visualguide.com/assets/img/characters/${charId}.jpg`
         return <div>
             <div className="character-details">
+                <img className="character-details-image" src={imageUrl} alt="Luke Skywalker"></img>
                 <div className="character-details-name">
                     {character.name}
                 </div>
