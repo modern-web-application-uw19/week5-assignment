@@ -43,7 +43,7 @@ class App extends React.Component {
                 />
                 )} 
               /> 
-              <Route path={`${/characters/}:id`} key={`char-:id`} component={Detail} />
+              <Route path={`${/characters/}:id`} key={`char`} component={Detail} />
               <Route path={`${/locations/}:id`} component={Detail} />
               <Route path={`${/episodes/}:id`} component={Detail} />
             </Switch>
