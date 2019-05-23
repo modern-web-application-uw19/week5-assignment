@@ -7,38 +7,51 @@ import Overview from './components/Overview/Overview';
 import Detail from './components/Detail/Detail';
 
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/characters" render={props => (
-            <Overview 
-              title="Characters"
-            />
-            )} 
-          /> 
-          <Route exact path="/locations" render={props => (
-            <Overview 
-              title="Locations"
-            />
-            )} 
-          /> 
-          <Route exact path="/episodes" render={props => (
-            <Overview 
-              title="Episodes"
-            />
-            )} 
-          /> 
-          <Route path={`${/characters/}:id`} component={Detail} />
-          <Route path={`${/locations/}:id`} component={Detail} />
-          <Route path={`${/episodes/}:id`} component={Detail} />
-        </Switch>
-      </Router>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <Header />
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/characters" key="charcomp" render={props => (
+                <Overview 
+                  title="Characters"
+                  endpoint="https://rickandmortyapi.com/api/character/"
+                />
+                )} 
+              /> 
+              <Route exact path="/locations" key="loccomp" render={props => (
+                <Overview 
+                  title="Locations"
+                  endpoint="https://rickandmortyapi.com/api/location/"
+                />
+                )} 
+              /> 
+              <Route exact path="/episodes" key="epicomp" render={props => (
+                <Overview 
+                  title="Episodes"
+                  endpoint="https://rickandmortyapi.com/api/episode/"
+                />
+                )} 
+              /> 
+              <Route path={`${/characters/}:id`} key={`char-:id`} component={Detail} />
+              <Route path={`${/locations/}:id`} component={Detail} />
+              <Route path={`${/episodes/}:id`} component={Detail} />
+            </Switch>
+          </div>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
