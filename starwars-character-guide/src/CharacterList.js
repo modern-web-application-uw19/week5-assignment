@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 
 import CharacterListItem from './CharacterListItem';
@@ -20,7 +21,11 @@ export default class CharacterList extends React.Component {
         }
 
         const characters = this.state.data.results;
-        const charItems = characters.map((char, i) => <CharacterListItem character={char} key={i} />);
+        const charItems = characters.map((char, i) => {
+            const id = char.url.split('/')[5];
+            return <Link className="character-link" key={i} to={`/character/${id}`} >
+                <CharacterListItem character={char} />
+            </Link>; });
         return <div className="character-list">
             {charItems}
         </div>;
