@@ -29,31 +29,31 @@ class Home extends Component {
     return (
       <div>
         <h1>Home</h1>
-        <div className="characters">
+        <div className="characters py-4">
           <h2>Characters</h2>
           <div className="row">
             {this.state.characters ? <CardGrid data={this.state.characters.results} limit={3} section="characters" /> : <div>Loading....</div>}
           </div>
-          <div>
-            <Link className="btn" to={'/characters'}>View All Characters</Link>
+          <div className="text-center">
+            <Link className="btn btn-primary" to={'/characters'}>View All Characters</Link>
           </div>
         </div>
-        <div className="locations">
+        <div className="locations py-4">
           <h2>Locations</h2>
           <div className="row">
             {this.state.locations ? <CardGrid data={this.state.locations.results} limit={3} section="locations" /> : <div>Loading....</div>}
           </div>
-          <div>
-            <Link className="btn" to={'/locations'}>View All Locations</Link>
+          <div className="text-center">
+            <Link className="btn btn-primary" to={'/locations'}>View All Locations</Link>
           </div>
         </div>
-        <div className="episodes">
+        <div className="episodes py-4">
           <h2>Episodes</h2>
           <div className="row">
             {this.state.episodes ? <CardGrid data={this.state.episodes.results} limit={3} section="episodes" /> : <div>Loading....</div>}
           </div>
-          <div>
-            <Link className="btn" to={'/episodes'}>View All Episodes</Link>
+          <div className="text-center">
+            <Link className="btn btn-primary" to={'/episodes'}>View All Episodes</Link>
           </div>
         </div>
 

@@ -42,7 +42,7 @@ class Overview extends Component {
     const loaded = this.state.isLoaded; 
     let content;
     if (loaded) {
-      content = <div>
+      content = <div className="pb-5">
         <h2>{this.props.title} ({this.state.info.count})</h2>
         <div className="row">
           <CardGrid
@@ -52,8 +52,8 @@ class Overview extends Component {
           />
         </div>
         {this.state.info.next != "" ? 
-          <div className="loadmore">
-            <button onClick={this.loadMore}>Load More</button>
+          <div className="loadmore text-center">
+            <button className="btn btn-primary" onClick={this.loadMore}>Load More</button>
           </div>
           : ""
         }

@@ -8,11 +8,17 @@ class Card extends Component {
   }
   render() { 
     return (  
-      <div className="col-sm-6 col-md-4">
-        <Link className="btn" to={`${this.props.section}/${this.props.data.id}`}>
-          {this.props.data.image ? <div><img src={this.props.data.image}/></div>: "" }
-          <p>{this.props.data.name}<br/>{this.props.data.id} </p>
+      <div className="col-sm-6 col-md-4 mb-5">
+     
+        <Link to={`${this.props.section}/${this.props.data.id}`}>
+          <div className="card">
+            {this.props.data.image ? <div><img src={this.props.data.image}/></div>: "" }
+            <div className="card-body">
+              <h4 className="card-title">{this.props.data.name}</h4>
+            </div>
+          </div>
         </Link>
+
       </div>
     );
   }
