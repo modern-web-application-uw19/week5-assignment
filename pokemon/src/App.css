@@ -1,0 +1,32 @@
+h2 {
+  margin: 30px;
+}
+
+p {
+  margin: 10px;
+  font-style: italic;
+}
+
+ul:not(.sublist) {
+  list-style-type: none;
+}
+
+.spriteImg {
+  max-width: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spriteImgHome {
+  max-width: 40px;
+}
+
+.pokemonCard {
+  width: 18rem;
+  margin: 20px;
+}
+
+.pokemonName {
+  text-transform: capitalize;
+}
