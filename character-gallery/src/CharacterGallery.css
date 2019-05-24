@@ -1,0 +1,83 @@
+.dets-lbl {
+    color: rebeccapurple;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 2px;
+    text-transform: uppercase;
+}
+.dets-row {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: lightgrey;
+    border: 2px groove goldenrod;
+}
+
+.dets-wrap {
+    border: 2px groove grey;
+    border-radius: 3px;
+    width: 160px;
+    margin-left: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.char-wrap {
+    border: 2px groove grey;
+    border-radius: 3px;
+    width: 160px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.char-item {
+    color: black;
+    font-weight: 400;
+    font-size: 12px;
+    margin: 2px;
+    text-transform: uppercase;
+}
+
+.site-wrap {
+    background-color: lightgrey;
+    border: 2px groove goldenrod;
+    border-radius: 3px;
+    width: 200px;
+    height: 20px;
+    margin-left: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.site-head {
+    color: rebeccapurple;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 2px;
+    text-transform: uppercase;
+}
+
+.dets-val {
+    color: black;
+    font-size: 12px;
+    margin: 2px;
+    text-transform: uppercase;
+}
+
+.dets-meas {
+    color: rebeccapurple;
+    font-size: 12px;
+    margin: 2px;
+    text-transform: uppercase;
+}
+
+.char-url {
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 0px;
+}
