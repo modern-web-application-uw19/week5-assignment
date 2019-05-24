@@ -37,8 +37,9 @@ export default class Home extends React.Component {
   }
 }
 
+// https://rickandmortyapi.com/documentation
 // Get all characters: https://rickandmortyapi.com/api/character/
-// .then(({results} is destructuring, to extract the results array from returned json, which is:
+// Returned json:
 // {
 //   "info": {
 //     "count": 394,
@@ -58,7 +59,3 @@ export default class Home extends React.Component {
 //     {...}
 //   ]
 // }
-
-// https://rickandmortyapi.com/documentation
-// "locations": "https://rickandmortyapi.com/api/location",
-// "episodes": "https://rickandmortyapi.com/api/episode"

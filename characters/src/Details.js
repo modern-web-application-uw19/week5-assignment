@@ -20,7 +20,6 @@ export default class Details extends React.Component {
     fetch(`https://rickandmortyapi.com/api/character/${this.props.match.params.id}`)
     .then(response => response.json())
     .then(data => { 
-      console.log("data: " + data);
       this.setState(
         {
           data: data,
@@ -35,13 +34,11 @@ export default class Details extends React.Component {
       return <div>Loading...</div>
     }
 
-    console.log("in Details component");
-
     return (
       <div>
         <p>Name: {this.state.data.name}</p>
         <p>Gender: {this.state.data.gender}</p>
-        <img src={this.state.data.image}/>
+        <img src={this.state.data.image} alt={this.state.data.name}/>
         <p>Location: {this.state.data.location.name}</p>
         <p>Species: {this.state.data.species}</p>
         <p>Status: {this.state.data.status}</p>
