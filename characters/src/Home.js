@@ -1,17 +1,19 @@
-import React, {Component} from 'react';
-import Details from './Details';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-class Home extends React.Component {
+export default class Home extends React.Component {
   state = {
-  characters: []
+    characters: []
   }
 
   componentDidMount() {
     fetch('https://rickandmortyapi.com/api/character/')
     .then(response => response.json())
-    .then(({results}) => {
-      this.setState({characters: results})
+    .then(data => { 
+      this.setState({characters: data.results})
+// or:
+//  .then(({results}) => { 
+//    this.setState({characters: results})
     })
   }
 
@@ -35,16 +37,8 @@ class Home extends React.Component {
   }
 }
 
-// {
-//   "characters": "https://rickandmortyapi.com/api/character",
-//   "locations": "https://rickandmortyapi.com/api/location",
-//   "episodes": "https://rickandmortyapi.com/api/episode"
-// }
-
-// https://rickandmortyapi.com/documentation
-// Get all characters:
-// https://rickandmortyapi.com/api/character/
-
+// Get all characters: https://rickandmortyapi.com/api/character/
+// .then(({results} is destructuring, to extract the results array from returned json, which is:
 // {
 //   "info": {
 //     "count": 394,
@@ -53,6 +47,18 @@ class Home extends React.Component {
 //     "prev": ""
 //   },
 //   "results": [
-//     // ...
+//     { 
+//       id: 1, 
+//       name: "Rick Sanchez", 
+//       status: "Alive", 
+//       species: "Human", 
+//       type: "", 
+//       …
+//     }, 
+//     {...}
 //   ]
 // }
+
+// https://rickandmortyapi.com/documentation
+// "locations": "https://rickandmortyapi.com/api/location",
+// "episodes": "https://rickandmortyapi.com/api/episode"
