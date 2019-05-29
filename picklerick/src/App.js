@@ -23,8 +23,10 @@ class SearchBox extends React.Component {
         this.input.current.addEventListener('search', this.onSearch);
     }
 
-    onSearch = () => {
+    onSearch = (e) => {
+
         window.location.href = "/";
+
     }
 
     render() {
@@ -35,7 +37,6 @@ class SearchBox extends React.Component {
         )
     }
 }
-
 
 class App extends  React.Component{
 
