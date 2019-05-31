@@ -3,35 +3,30 @@ import Data from './characters.json';
 import Character from './character';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
-function Char(){
-    return <div>{<Character />}</div>
-  }
 
-class CharacterList extends React.Component{
+function Char(){
+    return <Character  />
+  }
  
-    charDetailLink = (idx) => {
-      const Url =  Data[idx].link;  
-      console.log(Url)
-      
-    } 
+class CharacterList extends React.Component{
     
     render(){
        
         return(
+            <Router>
             <div>
                 <h1>Star Wars: Skywalker Family</h1>
-                <Router>
                 {Data.map((charDetail, idx)=>{
                     return <div key={idx} className="charDetail">
                              <div>{charDetail.name}</div>
-                             <div><button onClick={() => this.charDetailLink(idx)}><Link to='/char'>Activate Character Details</Link></button></div>
+                             <div><Link to={`Char/${Data[idx].link}`}>Character Details</Link></div>
                            </div>
                 })}
                 <switch>
-                    <Route exact path='/char' component={Char}/>
+                <Route exact path='Char/:id' component={Char} />
                 </switch>
-                </Router>
             </div>
+            </Router>
         )
     }
 }

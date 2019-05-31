@@ -30,8 +30,8 @@ class App extends React.Component {
           <hr />
           <switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/char' component={Char}/>
-            <Route exact path='/hworld' component={hWorld}/>
+            <Route path='/char' component={Char}/>
+            <Route path='/hworld' component={hWorld}/>
           </switch>
         </Router>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Url from './characters.js'
+import { Link} from 'react-router-dom';
 
 class Character extends React.Component{
     constructor(props){
@@ -8,12 +8,12 @@ class Character extends React.Component{
         this.state = {
           character: [],
           isLoading: true,
-          fetchUrl: Url
+          Url: null
         }
     }
    
       componentDidMount(){
-        fetch(this.props.fetchUrl) 
+        fetch() 
           .then(response => response.json())
           .then(data => {
             this.setState({
