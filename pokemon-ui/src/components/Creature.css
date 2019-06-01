@@ -1,0 +1,10 @@
+.creature {
+  color: white;
+  font-size: medium;
+  font-weight: 200;
+}
+.creature:hover {
+  color: greenyellow;
+  font-size: medium;
+  font-weight: 200;
+}

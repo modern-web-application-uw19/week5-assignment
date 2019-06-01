@@ -1,0 +1,7 @@
+div.creatureDetail {
+  border: black 1ex solid;
+  width: "100%";
+  background-color: dimgrey;
+  color: white;
+  padding: 16px;
+}
