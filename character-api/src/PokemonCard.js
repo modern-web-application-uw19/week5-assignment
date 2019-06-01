@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './Pokemon.css';
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -76,23 +76,28 @@ class Pokemon extends React.Component {
         const pokemonStats= data.stats
             .map((statArray, id) => 
                 {return (
-                    <li idx={id} key={id}>
-                        {capitalizeFirstLetter(statArray.stat.name)}  {statArray.base_stat}
+                    <li className="pokemon-stat" idx={id} key={id}>
+                        {capitalizeFirstLetter(statArray.stat.name)}:  
+                        &nbsp; {statArray.base_stat}
                     </li>
                 )}
             )
 
         return (
-            <div>
-                <img src={data.sprites.front_default} alt={data.name} />
-                <p>No. {data.id}</p>
+            <div className="pokemon-card-container">
+                <img className="pokemon-card" src={data.sprites.front_default} alt={data.name} />
                 <h4>{capitalizeFirstLetter(data.name)}</h4>
-                <p>HT {data.height}</p>
-                <p>WT {data.weight} lb</p>
-                <ul>{pokemonTypes}</ul>
-                <ul>{pokemonAbilities}</ul>
-                <ul>{pokemonStats}</ul>
-        </div>
+                <p className="pokemon-id">No. {data.id}</p>
+                <div className="basic-stats">
+                    <p className="pokemon-card">HT {data.height}</p>
+                    <p className="pokemon-card">WT {data.weight} lb</p>
+                </div>
+                <div className="basic-stats">
+                    <ul className="pokemon-card poke-types">{pokemonTypes}</ul>
+                    <ul className="pokemon-card poke-ability">{pokemonAbilities}</ul>
+                </div>
+                <ul className="pokemon-card poke-stats">{pokemonStats}</ul>
+            </div>
         );
         
     }

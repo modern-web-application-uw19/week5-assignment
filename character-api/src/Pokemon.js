@@ -1,12 +1,13 @@
 import React from 'react';
-import './App.css';
+import './Pokemon.css';
 import PropTypes from 'prop-types';
 
 class Pokemon extends React.Component {
-    //   static propTypes = {
-    //     rentals: PropTypes.array.isRequired,
-    //     onBookRental: PropTypes.func.isRequired
-    //   }
+      static propTypes = {
+        name: PropTypes.string.isRequired,
+        pokeIdx: PropTypes.number.isRequired,
+        url: PropTypes.string.isRequired
+      }
 
     constructor(props) {
         super(props);
@@ -19,7 +20,7 @@ class Pokemon extends React.Component {
 
     componentDidMount() {
         //const { name, pokeIdx, url } = this.props;
-    console.log(this.props.name)
+    //console.log(this.props.name)
         this.setState({
             name: this.props.name,
             idx: this.props.pokeIdx+1,
@@ -38,14 +39,14 @@ class Pokemon extends React.Component {
         }
 
         return (
-            <div className="">
+            <div className="pokemon">
+                <img src={imgUrl} alt={this.state.name} />
                 <h3>
                     {capitalizeFirstLetter(this.state.name)}
                 </h3>
                 <h3>
-                    {idx}
-                 </h3>
-                <img src={imgUrl} alt={this.state.name} />
+                    No. {idx}
+                </h3>
             </div>
         );
     }

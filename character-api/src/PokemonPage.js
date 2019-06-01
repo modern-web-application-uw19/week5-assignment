@@ -20,7 +20,7 @@ class PokemonPage extends React.Component {
     }
   
     componentDidMount() {
-        fetch('https://pokeapi.co/api/v2/pokemon/?limit=20')
+        fetch('https://pokeapi.co/api/v2/pokemon/?limit=807')
         .then(response => {
             // console.log(response);
             // console.log(response.json());
@@ -60,20 +60,11 @@ class PokemonPage extends React.Component {
                     </li>
                 )}
             );
-
-        // const pokemonTypes = data.types
-        //     .map((typeArray, id) => 
-        //         {return (
-        //             <li idx={id} key={id}>
-        //                 {capitalizeFirstLetter(typeArray.type.name)}
-        //             </li>
-        //         )}
-        //     )
         
         return (
             <div>
-                <h1>Pokemon Group</h1>
-                    <ul>
+                <h1>All 807 Pokémon</h1>
+                    <ul className="pokemon-group">
                         {pokemonGroup}
                     </ul>
                 <hr />                   

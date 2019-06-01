@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import PokemonCard from './PokemonCard.js'
 import PokemonPage from './PokemonPage.js';
@@ -13,7 +12,10 @@ import {
 function Home(props) {
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Pokémon API - Homework 5</h1>
+      <p>Go to '<Link to="/pokemon" className="link">localhost:3000/pokemon</Link>' to view all 807 Pokémon.</p>
+      <p>Type the name of a Pokémon after '<u>localhost:3000/pokemon</u>'' to view it's info!</p>
+      <p>i.e. '<Link to="/pokemon/mew" className="link">localhost:3000/pokemon/mew</Link>'</p>
     </div>
   );
 }
@@ -35,11 +37,12 @@ class App extends React.Component {
  render (){
 
     return(
-      <div className="App">
-        <Router>
-          <Link to="/">Home</Link>
-          <Link to="/pokemon">Pokemon</Link>
-          <hr />
+      <div className="App" >
+        <Router >
+          <div className="App-header">
+            <Link to="/" className="App-header-link">Home</Link>
+            <Link to="/pokemon" className="App-header-link" >Pokémon</Link>
+          </div>
  
           <Switch>
             <Route exact path="/" component={Home} />
