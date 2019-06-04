@@ -1,5 +1,6 @@
 import React from 'react';
-import _data from './data.json';
+// import _data from './data.json';
+import _data from 'https://swapi.co/api/';
 
 export default class Characters extends React.Component {
     constructor(props) {
@@ -11,22 +12,24 @@ export default class Characters extends React.Component {
         }
     }
 
-    // componentDidMount() {
-    //     fetch(_data)
-    //       .then(response => response.json())
-    //       .then(data => {
-    //         this.setState({ //render() fn is called when you setState.
-    //           data: data.name, //filter JSON down to what you actually need
-    //           isLoading: false
-    //         });
-    //       })
-    //       .catch(error => {
-    //         this.setState({
-    //           hasError: true,
-    //           isLoading: false
-    //         });
-    //       });
-    // }
+    // If I comment the below block of code, and change reference to local data, the app will work. I cannot get this to work with live API.
+    componentDidMount() {
+        fetch(this.state.data + 'people/')
+          .then(response => response.json())
+          .then(data => {
+            this.setState({ 
+              data: this.state.data.results, 
+              // ^ Not sure how to get that working ^
+              isLoading: false
+            });
+          })
+          .catch(error => {
+            this.setState({
+              //hasError: true,
+              isLoading: false
+            });
+          });
+    }
     
     render() {
         if (this.state.isLoading) {
