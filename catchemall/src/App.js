@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import PokemonDetail from './PokemonDetail'
 
 class Pokemon extends React.Component {
   constructor(props) {
@@ -40,42 +41,34 @@ class Pokemon extends React.Component {
     if (this.state.hasError) {
       return <div>ERROR, please reload and try again</div>;
     }
-
     const theResults = (this.state.data.results);
-    const top20 = theResults.map((names, idx) => <li key={idx}>{names.name}</li>);
+    const top20 = theResults
+      .map((poke, idx) => <li key={idx}><Link to={`pokemon/${poke.name}`}>{poke.name}</Link></li>);
 
     return (
       <div>
         <ul>
-        {top20}
+          {top20}
         </ul>
       </div>
     );
   }
 }
 
-function Home() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
-}
-
 function NotFound() {
   return <h1>404</h1>
 }
+
 
 function TheRouter() {
   return (
     <div>
       <Router>
-        <Link to="/">Home </Link>
-        <Link to="/pokemon/:name">Pokemon</Link>
+        <Link to="/">Home</Link>
 
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/pokemon/:name" component={Pokemon} />
+          <Route exact path="/" component={Pokemon} />
+          <Route path="/pokemon/:name" component={PokemonDetail} />
           <Route component={NotFound} />
         </Switch>
       </Router>
