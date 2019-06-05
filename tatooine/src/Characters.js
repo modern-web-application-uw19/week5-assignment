@@ -1,12 +1,11 @@
 import React from 'react';
 // import _data from './data.json';
-import _data from 'https://swapi.co/api/';
 
 export default class Characters extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: _data,
+            data: [],
             isLoading: false,
             hasError: false
         }
@@ -14,12 +13,11 @@ export default class Characters extends React.Component {
 
     // If I comment the below block of code, and change reference to local data, the app will work. I cannot get this to work with live API.
     componentDidMount() {
-        fetch(this.state.data + 'people/')
+        fetch('https://swapi.co/api/people/')
           .then(response => response.json())
-          .then(data => {
+          .then(result => {
             this.setState({ 
-              data: this.state.data.results, 
-              // ^ Not sure how to get that working ^
+              data: result.results, 
               isLoading: false
             });
           })
@@ -38,12 +36,14 @@ export default class Characters extends React.Component {
         if (this.state.hasError){
             return <div>ERROR, try again</div>
         }
-        const characterList = Object.keys(this.state.data.results)
+        console.log('State: ', this.state.data);
+
+        const characterList = Object.keys(this.state.data)
             .map((person, idx) => {
                 const charUrl = `/detail/${idx}`;
                 return (
                     <li key={idx}>
-                        <a href={charUrl}>{this.state.data.results[person].name}</a>
+                        <a href={charUrl}>{this.state.data[person].name}</a>
                     </li>
                 );
             });
