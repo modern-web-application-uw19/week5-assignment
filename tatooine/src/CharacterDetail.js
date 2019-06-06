@@ -1,5 +1,4 @@
 import React from 'react';
-// import _data from './data.json';
 
 export default class CharacterDetail extends React.Component {
     constructor(props) {
@@ -12,21 +11,18 @@ export default class CharacterDetail extends React.Component {
         }
     }
 
-    // If I comment the below block of code, and change reference to local data, the app will work. I cannot get this to work with live API.
     componentDidMount() {
         fetch('https://swapi.co/api/people/')
           .then(response => response.json())
           .then(result => {
             this.setState({ 
-            // data: data.results[this.state.person]
-            // ^ This is not filtering for me. ^ 
                 data: result.results[this.state.person],
                 isLoading: false
             });
           })
           .catch(error => {
             this.setState({
-              //hasError: true,
+              hasError: true,
               isLoading: false
             });
           });
